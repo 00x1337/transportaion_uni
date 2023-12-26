@@ -81,8 +81,12 @@
         </div>
 
         <div class="col-span-6 sm:col-span-4">
-            <x-label for="name" value="{{ __('المنطقة') }}" />
-            <select id="name" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full" wire:model="RR" required >
+            <div class="flex">
+                <a href="" class="" style="color: red">*</a>
+            <x-label for="name"  value="{{ __('المنطقة') }}" />
+            </div>
+
+            <select id="name"  class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full" wire:model="state.located" name="located" required >
                 <option value="">اختر المنطقة</option>
                 <option value="مكة">مكة</option>
                 <option value="الرياض">الرياض</option>
@@ -91,7 +95,50 @@
             </select>
             <x-input-error for="name" class="mt-2" />
         </div>
-
+        @if(auth()->user()->role == "user")
+        <div class="col-span-6 sm:col-span-4">
+            <div class="flex">
+                <a href="" class="" style="color: red">*</a>
+            <x-label for="google_map" value="{{ __('الموقع (رابط قوقل ماب)') }}" />
+            </div>
+            <x-input id="google_map" type="text" class="mt-1 block w-full" wire:model="state.google_map" required autocomplete="google_map" />
+            <x-input-error for="google_map" class="mt-2" />
+        </div>
+        @endif
+        @if(auth()->user()->role == "driver")
+            <div class="col-span-6 sm:col-span-4">
+                <div class="flex">
+                    <a href="" class="" style="color: red">*</a>
+                    <x-label for="price" value="{{ __('السعر') }}" />
+                </div>
+                <x-input id="price" type="text" class="mt-1 block w-full" wire:model="state.price" required autocomplete="price" />
+                <x-input-error for="price" class="mt-2" />
+            </div>
+            <div class="col-span-6 sm:col-span-4">
+                <div class="flex">
+                    <a href="" class="" style="color: red">*</a>
+                    <x-label for="where" value="{{ __('الجنسية') }}" />
+                </div>
+                <x-input id="where" type="text" class="mt-1 block w-full" wire:model="state.where" required autocomplete="where" />
+                <x-input-error for="where" class="mt-2" />
+            </div>
+            <div class="col-span-6 sm:col-span-4">
+                <div class="flex">
+                    <a href="" class="" style="color: red">*</a>
+                    <x-label for="type_car" value="{{ __('نوع السيارة') }}" />
+                </div>
+                <x-input id="type_car" type="text" class="mt-1 block w-full" wire:model="state.type_car" required autocomplete="type_car" />
+                <x-input-error for="type_car" class="mt-2" />
+            </div>
+        @endif
+        <div class="col-span-6 sm:col-span-4">
+            <div class="flex">
+                <a href="" class="" style="color: red">*</a>
+                <x-label for="phone" value="{{ __('رقم الجوال') }}" />
+            </div>
+            <x-input id="phone" type="text" class="mt-1 block w-full" wire:model="state.phone" required autocomplete="phone" />
+            <x-input-error for="phone" class="mt-2" />
+        </div>
     </x-slot>
 
     <x-slot name="actions">

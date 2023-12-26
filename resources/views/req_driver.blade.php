@@ -5,6 +5,8 @@
         </h2>
     </x-slot>
 
-    @livewire('handle-requests')
+    @livewire('req-driver')
+    <!-- مثال على كيفية عرض رسالة الفلاش في HTML -->
+
 
 </x-app-layout>

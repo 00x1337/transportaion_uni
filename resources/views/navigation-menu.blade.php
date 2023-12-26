@@ -99,36 +99,8 @@
                             </div>
 
                             <x-dropdown-link :href="route('profile.show')">
-                                الصفحة الشخصية
+                                الملف الشخصي
                             </x-dropdown-link>
-
-                            <x-dropdown-link :href="route('dashboard')">
-                                لوحة التحكم
-                            </x-dropdown-link>
-
-                            <x-dropdown-link :href="route('reg_1')">
-                                التسجيل - الخطوة 1
-                            </x-dropdown-link>
-
-                            <x-dropdown-link :href="route('home')">
-                                الصفحة الرئيسية
-                            </x-dropdown-link>
-
-                            <x-dropdown-link :href="route('chats')">
-                                الدردشة
-                            </x-dropdown-link>
-
-                            <x-dropdown-link :href="route('req')">
-                                الطلبات
-                            </x-dropdown-link>
-
-                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                                <x-dropdown-link href="{{ route('api-tokens.index') }}">
-                                    {{ __('API Tokens') }}
-                                </x-dropdown-link>
-                            @endif
-
-                            <div class="border-t border-gray-200"></div>
 
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}" x-data>

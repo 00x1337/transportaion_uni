@@ -23,7 +23,7 @@
                 <div class="text-white text-xl font-bold">رافقني</div>
                 <nav>
                     <ul class="flex space-x-4">
-                        <li><a href="#" class="text-white">تسجيل دخول</a></li>
+                        <li><a href="/login" class="text-white">تسجيل دخول</a></li>
                     </ul>
                 </nav>
             </div>
@@ -38,10 +38,10 @@
                 </div>
 
                 <div class="-m-2 flex flex-wrap">
-                    <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ">سجل كـ سائق</a>
+                    <a href="/register" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ">سجل كـ سائق</a>
                     <div class="m-2"></div>
 
-                    <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">سجل كـ طالب</a>
+                    <a href="/register" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">سجل كـ طالب</a>
                 </div>
             </div>
         </main>

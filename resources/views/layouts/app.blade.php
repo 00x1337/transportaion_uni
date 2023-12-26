@@ -36,6 +36,32 @@
                 <header class="bg-white shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
+                        <nav class=" py-4">
+                            <div class="container mx-auto flex items-center justify-between px-4">
+
+                                <!-- Navbar Links as Buttons -->
+                                <div class="flex items-center space-x-4">
+                                    <form method="GET" action="{{ route('profile.show') }}">
+                                        <button type="submit" class="w-full text-center px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-blue-500 hover:bg-green-500 cursor-pointer">الملف الشخصي</button>
+                                    </form>
+                                    <form method="GET" action="{{ route('home') }}">
+                                        <button type="submit" class="w-full text-center px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-blue-500 hover:bg-green-500 cursor-pointer">الصفحة الرئيسية</button>
+                                    </form>
+                                    <form method="GET" action="{{ route('chats') }}">
+                                        <button type="submit" class="w-full text-center px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-blue-500 hover:bg-green-500 cursor-pointer">الدردشة</button>
+                                    </form>
+                                    @if(\Auth::user()->role != "user")
+                                        <form method="GET" action="{{ route('req') }}">
+                                            <button type="submit" class="w-full text-center px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-blue-500 hover:bg-green-500 cursor-pointer">الطلبات</button>
+                                        </form>
+                                    @endif
+
+
+
+                                </div>
+                            </div>
+                        </nav>
+
                     </div>
                 </header>
             @endif
