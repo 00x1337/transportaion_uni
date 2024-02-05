@@ -9,7 +9,7 @@
 
 
         <div class="min-h-screen flex items-center justify-center">
-            <div class="bg-white p-8 rounded shadow-lg max-w-md w-full">
+            <div class="bg-white p-8 rounded shadow-lg w-full">
                 <h1 class="text-2xl font-semibold mb-4 text-center">الشات</h1>
                 <div class="border rounded-lg p-4 mb-4 space-y-4">
                     <!-- محادثة مستلمة -->

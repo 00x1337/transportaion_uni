@@ -41,7 +41,7 @@ return view('welcome');
 Route::get('/home', function () {
 
 
-    return view('home');
+    return redirect("/");
 })->name('home');
 Route::get('/chats', function () {
 
@@ -73,8 +73,11 @@ Route::get('/chats/1', function () {
 })->name("chats_1");
 
 Route::get('/chats/user/{id}', function ($id) {
+    $lastMessage = \App\Models\Message::where('received_id', auth()->id())->where("user_id","=",$id)->latest()->first();
 
-
+    if ($lastMessage) {
+        $lastMessage->update(['received' => true]);
+    }
     return view('chats_2_user',compact('id'));
 })->name("chats_user");
 Route::get('/chats/3', function () {
@@ -94,3 +97,19 @@ Route::get('/req_driver', function () {
 
     return view('req_driver');
 })->name("req_driver");
+
+Route::get('/reg_user', function () {
+    // تخزين البيانات في السيشن
+    Session::put('role', 'user');
+
+    // عمل Redirect إلى الصفحة المطلوبة
+    return redirect('/register');
+});
+
+Route::get('/reg_driver', function () {
+    // تخزين البيانات في السيشن
+    Session::put('role', 'driver');
+
+    // عمل Redirect إلى الصفحة المطلوبة
+    return redirect('/register');
+});

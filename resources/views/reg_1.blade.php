@@ -11,8 +11,8 @@
 
     <div class="min-h-screen flex items-center justify-center">
 
-    <div class=" flex items-center ">
-        <div class="bg-white p-8 rounded shadow-lg max-w-md w-full">
+    <div class=" bg-white p-8 rounded shadow-lg  w-full ">
+        <div class="bg-white p-8 rounded shadow-lg  w-full">
             <h1 class="text-2xl font-semibold mb-4 text-center" dir="rtl">مرحبًا بك، {{\Auth::user()->name}}</h1>
             <hr class="my-4">
             <center>
@@ -55,9 +55,7 @@
     @if(\Auth::user()->google_map ==null && \Auth::user()->located ==null)
             <div class="list-disc list-inside mb-6 space-y-4">
                 <div>
-                    <a href="/user/profile"  class="w-full text-center px-4 py-2 border border-transparent rounded-md shadow-sm  text-white bg-gray-500 hover:bg-gray-600 cursor-pointer">
-                        اختيار المنطقه و وضع الموقع
-                    </a>
+                    @livewire('start-user')
                 </div>
 
 
@@ -67,7 +65,6 @@
             <br><br>
             </center>
 
-            <p class="text-sm text-gray-600 text-center">إذا كانت لديك أي استفسارات، لا تتردد في الاتصال بنا.</p>
     </div>
         @else
             <br>

@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('price')->nullable();
             $table->string('where')->nullable();
             $table->string('type_car')->nullable();
+            $table->longText('selectedDays')->nullable();
+            $table->longText('selectedHours')->nullable();
 
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

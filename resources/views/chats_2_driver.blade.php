@@ -8,9 +8,9 @@
     <div class="py-12">
 
             <div class="min-h-screen flex items-center justify-center">
-                <div class="bg-white p-8 rounded shadow-lg max-w-md w-full">
+                <div class="bg-white p-8 rounded shadow-lg w-full">
                     <center class="p-6">
-                        <h1 class="text-2xl font-semibold mb-4 text-center">الرفيقات</h1>
+                        <h1 class="text-2xl font-semibold mb-4 text-center">الرسايل</h1>
                         <p class="mb-4 text-lg leading-relaxed">هنا يمكنك الوصول إلى المحادثات الخاصة بك.</p>
                         <div class="flex flex-col space-y-4">
                             <!-- مثال لمحادثة مستخدم 1 -->
@@ -30,6 +30,7 @@
                                     .</p>
 
                             @endif
+
                         </div>
                     </center>
                 </div>

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Http\Controllers;
 
 use App\Models\req;
-use Livewire\Component;
+use Illuminate\Http\Request;
 
-class HandleRequests extends Component
+class send_req_driver extends Controller
 {
     public function acceptRequest($requestId)
     {
@@ -17,7 +17,6 @@ class HandleRequests extends Component
             $request->save();
 //            dd($request);
         }
-        dd(req::find($requestId));
     }
 
     public function rejectRequest($requestId)
@@ -27,10 +26,5 @@ class HandleRequests extends Component
             $request->accept = false;
             $request->save();
         }
-    }
-    public function render()
-    {
-        $requests = req::where('id_driver', \Auth::id())->where('accept','=',null)->get();
-        return view('livewire.handle-requests', ['requests' => $requests]);
     }
 }

@@ -1,3 +1,3 @@
 <a href="/">
-    <img height="10" width="100" src="https://cdn.discordapp.com/attachments/1177370777956405350/1184183532751421490/Png.png?ex=658b0bdb&is=657896db&hm=6456e1b646c3e7207152158613297c788d8b445561789cae3b87b50664f79590&" alt="">
+    <img height="10" width="100" src="https://media.discordapp.net/attachments/830363391335333888/1199027428379594784/3.png?ex=65c10c4f&is=65ae974f&hm=15288304b957cae260e4bb8b19bf1d0d25b4c30147f9c5ccf2a9edaf89e3985a&=&format=webp&quality=lossless&width=616&height=612" alt="">
 </a>

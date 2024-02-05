@@ -1,5 +1,5 @@
 <div >
-    <div id="chat-container"  style="max-width: 400px; overflow-y: scroll; max-height: 400px;">
+    <div id="chat-container"  style="overflow-y: scroll; ">
     <div class="border rounded-lg p-4 mb-4 space-y-4">
 
         <!-- عرض الرسائل -->
@@ -14,7 +14,7 @@
                         <span>{{ \App\Models\User::find($message->user_id)->name }}</span>
                         <img src="https://ui-avatars.com/api/?name={{$user->name[0]}}&color=7F9CF5&background=EBF4FF" alt="صورة المستلم" class="rounded-full w-8 h-8">
                     </div>
-                    <div style="width: calc(100% - 200px);">
+                    <div style="">
                         <div class="bg-gray-200 rounded-lg p-2 ml-2">
                             <p>{{ $message['content'] }}</p>
                         </div>

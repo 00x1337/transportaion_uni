@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('content');
             $table->text('located')->nullable();
-            $table->boolean('received')->default(true); // يشير إذا كانت الرسالة مستلمة أم مرسلة
+            $table->boolean('received')->default(false); // يشير إذا كانت الرسالة مستلمة أم مرسلة
             $table->integer('received_id')->nullable(); // يشير إذا كانت الرسالة مستلمة أم مرسلة
             $table->integer('user_id'); // يشير إذا كانت الرسالة مستلمة أم مرسلة
 

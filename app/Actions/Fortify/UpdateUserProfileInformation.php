@@ -10,6 +10,7 @@ use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 {
+
     /**
      * Validate and update the given user's profile information.
      *
@@ -22,13 +23,11 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'located' => ['required', 'string', 'max:255'],
             'google_map' => ['required', 'string'],
             'phone' => ['required', 'string'],
-            'price' => [ 'string'],
-            'type_car' => [ 'string'],
-            'where' => [ 'string'],
 
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
         ])->validateWithBag('updateProfileInformation');
+//        dd($input);
 
         if (isset($input['photo'])) {
             $user->updateProfilePhoto($input['photo']);
@@ -39,14 +38,26 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $this->updateVerifiedUser($user, $input);
         } else {
 if($user->role == 'user'){
+// dd($input['selectedDays']);
+// $selectedHoursـ = [];
+//     $days = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس'];
+//     $selectedHoursArray = json_decode(auth()->user()->selectedDays, true);
+//     dd($input);
+//     foreach ($days as $day) {
+//             $selectedHoursـ[]= $input[""];
 
+//     }
+
+    // تحويل المصفوفة إلى JSON
+    // dd(json_encode($selectedHours));
             $user->forceFill([
                 'name' => $input['name'],
                 'email' => $input['email'],
                 'located' => $input['located'],
                 'google_map' => $input['google_map'],
                 'phone' => $input['phone'],
-
+                 'selectedDays' => json_encode($input['days']),
+                // 'selectedHours' => $input['selectedHours'],
             ])->save();
 }else{
     $user->forceFill([

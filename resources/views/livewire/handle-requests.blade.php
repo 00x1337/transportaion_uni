@@ -1,7 +1,7 @@
 <div>
     <div class="py-12">
         <div class="min-h-screen flex items-center justify-center">
-            <div class="bg-white p-8 rounded shadow-lg max-w-md w-full">
+            <div class="bg-white p-8 rounded shadow-lg  w-full">
                 <center class="p-6">
                     <h1 class="text-2xl font-semibold mb-4 text-center">الطلبات</h1>
                     <p class="mb-4 text-lg leading-relaxed">هنا يمكنك الوصول إلى الطلبات الخاصة بك.</p>
@@ -9,7 +9,7 @@
                         @if(auth()->user()->role != "user")
                             @foreach($requests as $request)
                                 <li class="flex justify-between items-center bg-gray-100 p-4 rounded-md" dir="rtl">
-                                    <span> {{\App\Models\User::find($request->user_id)->name}}</span>
+                                    <a href="/profile/{{$request->user_id}}"> {{\App\Models\User::find($request->user_id)->name}}</a>
                                     <div class="flex">
                                         <button wire:click="acceptRequest({{$request->id}})" style="
     background-color: green;
@@ -26,7 +26,7 @@
 
                             @foreach(\App\Models\req::where("user_id",'=',auth()->id())->get() as $request)
                                 <li class="flex justify-between items-center bg-gray-100 p-4 rounded-md" dir="rtl">
-                                    <a href="/profile/{{$request->user_id}}"> {{\App\Models\User::find($request->user_id)->name}}</a>
+                                    <a href="/profile/{{$request->user_id}}"> {{\App\Models\User::find($request->id_driver)->name}}</a>
                                     @if($request->accept === null)
                                     <a href="">في الانتظار...</a>
                                     @elseif($request->accept == true )

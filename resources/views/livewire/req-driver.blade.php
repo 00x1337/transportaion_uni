@@ -3,7 +3,7 @@
 
     <div class="py-12">
         <div class="min-h-screen flex items-center justify-center">
-            <div class="bg-white p-8 rounded shadow-lg max-w-md w-full">
+            <div class="bg-white p-8 rounded shadow-lg  w-full">
                 <center class="p-6">
                     @if(session()->has('message'))
                         <div id="alertMessage" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
