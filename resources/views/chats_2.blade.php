@@ -38,7 +38,7 @@
                                         {{--                                        @endif--}}
                                     </div>
                                     @php
-                                    $message = \App\Models\Message::where('received_id', auth()->id())->latest()->first();
+                                    $message = \App\Models\Message::where('received_id', auth()->id())->where("user_id",$o->id)->latest()->first();
                                     @endphp
                                     @if(isset($message) && $message->received == false)
                                         <div>
